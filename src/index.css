@@ -1,0 +1,22 @@
+div.scrollmenu {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu .card-people {
+  display: inline-block;
+  color: rgb(0, 0, 0);
+  text-align: left;
+  padding: 14px;
+  text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+  background-color: #777;
+}
+
+img {
+  position: relative;
+    width: 100%;
+    height: 200px;
+}
