@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import { Layout } from "./pages/Layout";
 import { Home } from "./pages/Home";
-import { Single } from "./pages/Single";
+import { Details } from "./pages/Details"; // Rename Single.jsx to Details.jsx or create Details.jsx
 import { Demo } from "./pages/Demo";
 
 export const router = createBrowserRouter(
@@ -19,12 +19,12 @@ export const router = createBrowserRouter(
     // Note: The child paths of the Layout element replace the Outlet component with the elements contained in the "element" attribute of these child paths.
 
       // Root Route: All navigation will start from here.
-      <Route path="/" element={<Layout />} errorElement={<h1>Page not found</h1>}>
+      <Route path="/" element={<Layout />} errorElement={<h1>Page not found1</h1>}>
         {/* Layout component serves as a wrapper for the main application layout. */}
 
         {/* Nested Routes: Defines sub-routes within the BaseHome component. */}
         <Route path= "/" element={<Home />} />
-        <Route path="/single/:theId" element={ <Single />} />  {/* Dynamic route for single items */}
+        <Route path="/details/:type/:uid" element={<Details />} />  {/* Dynamic route for single items */}
         <Route path="/demo" element={<Demo />} />
       </Route>
     )

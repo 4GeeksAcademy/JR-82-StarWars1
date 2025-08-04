@@ -1,9 +1,41 @@
 div.scrollmenu {
   overflow: auto;
   white-space: nowrap;
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+span.navbar-brand.mb-0.h1 {
+  text-decoration: none;
+}
+
+.navbar.navbar-light.bg-light {
+  background-color: #435a8eff !important;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #a19494 !important;
+}
+
+.card-details-planets {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  padding: 12px;
+  margin: 12px 0;
+  overflow: auto;
 }
 
 div.scrollmenu .card-people {
+  display: inline-block;
+  color: rgb(0, 0, 0);
+  text-align: left;
+  padding: 14px;
+  text-decoration: none;
+}
+
+div.scrollmenu .card-planets {
   display: inline-block;
   color: rgb(0, 0, 0);
   text-align: left;
