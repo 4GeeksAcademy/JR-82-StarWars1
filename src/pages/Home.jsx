@@ -36,7 +36,7 @@ export const Home = () => {
     }
   };
 
-   const fetchAllPlanets = async () => {
+  const fetchAllPlanets = async () => {
     try {
       const response = await fetch("https://www.swapi.tech/api/planets");
       if (response.ok) {
@@ -46,7 +46,6 @@ export const Home = () => {
           limitedResults.map(async (planet) => {
             const detailRes = await fetch(planet.url);
             const detailData = await detailRes.json();
-            console.log("UID:", planet.uid); // <-- Log here
             return {
               uid: planet.uid,
               name: detailData.result.properties.name,
@@ -65,19 +64,16 @@ export const Home = () => {
     }
   };
 
-
-
   useEffect(() => {
     fetchAllPeople();
     fetchAllPlanets();
   }, []);
 
-
   return (
-   <div className="scrollmenu">
-   <h2>Characters</h2>
-      {people.map(person => (
-	   <CardPeople
+    <div className="scrollmenu">
+      <h2>Characters</h2>
+      {people.map((person) => (
+        <CardPeople
           key={person.uid}
           uid={person.uid}
           name={person.name}
@@ -89,7 +85,7 @@ export const Home = () => {
       <br />
       <br />
       <h2>Planets</h2>
-      {planets.map(planet => (
+      {planets.map((planet) => (
         <CardPlanets
           key={planet.uid}
           uid={planet.uid}

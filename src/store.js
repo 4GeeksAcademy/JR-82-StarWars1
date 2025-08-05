@@ -1,5 +1,7 @@
 export const initialStore = () => ({
-  people: []
+  people: [],
+  favorites: [],
+  planets: []
 });
 
 export default function storeReducer(store, action = {}) {
@@ -9,17 +11,24 @@ export default function storeReducer(store, action = {}) {
         ...store,
         people: action.payload
       };
-    case 'add_favorite':
-      const { id, color } = action.payload;
+    case "ADD_FAVORITE":
+      // Prevent duplicates
+      if (store.favorites.some(fav => fav.uid === action.payload.uid && fav.type === action.payload.type)) {
+        return store;
+      }
       return {
         ...store,
-        todos: store.todos.map((todo) =>
-          todo.id === id ? { ...todo, background: color } : todo
-        )
+        favorites: [...store.favorites, action.payload]
+      };
+    case "REMOVE_FAVORITE":
+      return {
+        ...store,
+        favorites: store.favorites.filter(fav => !(fav.uid === action.payload.uid && fav.type === action.payload.type))
       };
     default:
-      throw Error('Unknown action.');
-  }
-}
+      throw Error('Unknown action.');   throw Error('Unknown action.');
+  } }
+
+
 
 

@@ -52,3 +52,64 @@ img {
     width: 100%;
     height: 200px;
 }
+
+.description {
+  width: 400px;         /* Set your desired width */
+  height: 250px;        /* Set your desired height */
+  float: right;         /* Aligns the box to the right */
+  margin: 24px 0 24px 24px;
+  text-align: left;     /* Optional: keeps text left-aligned inside */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center content */
+  align-items: flex-end;   /* Align content to the right inside the box */
+  background: #222;        /* Optional: background color */
+  color: #fff;             /* Optional: text color */
+  border-radius: 12px;     /* Optional: rounded corners */
+  padding: 24px;           /* Optional: padding */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Optional: shadow */
+}
+
+.people-details-row {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background: #222;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  padding: 16px 0;
+  z-index: 1000;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+  gap: 32px;
+}
+
+.people-details-row > div {
+  min-width: 120px;
+  text-align: center;
+}
+
+.planet-details-row {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background: #222;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  padding: 16px 0;
+  z-index: 1000;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+  gap: 32px;
+}
+
+.planet-details-row > div {
+  min-width: 120px;
+  text-align: center;
+}

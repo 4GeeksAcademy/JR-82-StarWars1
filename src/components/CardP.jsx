@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 
 const CardPeople = ({ uid, name, gender, eyeColor, hairColor }) => {
-  const handleLearnMore = async () => {
-    const response = await fetch(`https://www.swapi.tech/api/people/${uid}`);
-    const data = await response.json();
-    console.log(data);
-    // You can navigate or set state here if needed
+  const { dispatch } = useGlobalReducer();
+
+  const addFavorite = () => {
+    dispatch({
+      type: "ADD_FAVORITE",
+      payload: { uid, name, type: "people" }
+    });
   };
 
   return (
@@ -14,7 +17,7 @@ const CardPeople = ({ uid, name, gender, eyeColor, hairColor }) => {
     border: '1px solid #ddd',
     borderRadius: '8px',
     width: '300px',
-    backgroundColor: '#435a8eff',
+    backgroundColor: '#4d69abff',
     boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
     overflow: 'hidden',
     fontFamily: 'sans-serif',
@@ -31,6 +34,7 @@ const CardPeople = ({ uid, name, gender, eyeColor, hairColor }) => {
         <Link to={`/details/people/${uid}`}>
           <button>Learn More</button>
         </Link>
+        <button onClick={addFavorite}>Favorite</button>
       </div>
     </div>
   </div>
